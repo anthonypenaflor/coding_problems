@@ -11,23 +11,23 @@ def print_hi(name):
     # targetSum = 0
 
     """Sum of three numbers problem"""
-    # for i in range(len(array) - 1):
-    #     numOne = array[i]
-    #     for j in range(i + 1, len(array)):
-    #         numTwo = array[j]
-    #         for k in range(j + 1, len(array)):
-    #             numThree = array[k]
-    #             if numOne + numTwo + numThree == targetSum:
-    #                 print(numOne, numTwo, numThree)
+    for i in range(len(array) - 1):
+        numOne = array[i]
+        for j in range(i + 1, len(array)):
+            numTwo = array[j]
+            for k in range(j + 1, len(array)):
+                numThree = array[k]
+                if numOne + numTwo + numThree == targetSum:
+                    print(numOne, numTwo, numThree)
 
     """Valid Sequence Problem"""
-    # arrayIndex = 0
-    # seqIndex = 0
-    # while arrayIndex < len(array) and seqIndex < len(sequence):
-    #     if array[arrayIndex] == sequence[seqIndex]:
-    #         seqIndex += 1
-    #     arrayIndex += 1
-    # return seqIndex == len(sequence)
+    arrayIndex = 0
+    seqIndex = 0
+    while arrayIndex < len(array) and seqIndex < len(sequence):
+        if array[arrayIndex] == sequence[seqIndex]:
+            seqIndex += 1
+        arrayIndex += 1
+    return seqIndex == len(sequence)
     star = '*'
     for i in range(10):
         print(star*i)
