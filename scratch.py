@@ -81,21 +81,42 @@ def swap(array, i, j):
     return array
 
 
+def daily_temperatures(temperatures):
+    result = [0 for _ in range(len(temperatures))]
+    stack = []
+
+    for i, temp in enumerate(reversed(temperatures)):
+        while stack and stack[-1][1] <= temp:
+            stack.pop()
+        if stack:
+            result[i] = i - stack[-1][0]
+        else:
+            result[i] = 0
+
+        stack.append((i, temp))
+
+    return reversed(result)
+
+
 if __name__ == '__main__':
     # Variables for functions
     # multiple_length = 1000
     # n = 100
     # characters = "asdfjkl;"
-    denoms = [1, 5, 10, 25]
-    n = 6
-    array = [1, 0, 0, -1, -1, 0, 1, 1]
-    order = [0, 1, -1]
+    # denoms = [1, 5, 10, 25]
+    # n = 6
+    # array = [1, 0, 0, -1, -1, 0, 1, 1]
+    # order = [0, 1, -1]
+
+    temps = [73, 74, 75, 71, 69, 72, 76, 73]
+    daily_temperatures(temps)
+
 
     # Functions
     # fibonacci(n)
     # unique_characters(characters)
     # ways_to_make_change(n, denoms)
-    threeNumberSort(array, order)
+    # threeNumberSort(array, order)
 
 
 
